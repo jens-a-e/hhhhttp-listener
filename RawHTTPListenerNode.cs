@@ -229,7 +229,11 @@ namespace VVVV.Nodes
 				} catch(Exception e) {
 					// nothing, maybe append to error spread...
 				} finally {
-					response.Close();
+					try {
+						response.Close();
+					} catch(Exception e) {
+						// nothing, maybe append to error spread...
+					}
 				}
 				
 				i++;
